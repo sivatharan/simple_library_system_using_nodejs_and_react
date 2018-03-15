@@ -1,4 +1,4 @@
-## This project was React-and-Nodejs-Simple-Library-System.
+## This project was  Simple Library System used React & Nodejs.
 Simple Library System Solution to Add and List Books
 
 ### Proposed Solution

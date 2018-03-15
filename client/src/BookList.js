@@ -73,9 +73,9 @@ export default class BookList extends React.Component {
 							    <input className="input" type="text" placeholder="Add Book" onChange={this.handleChange} value={this.state.newBook}/>
 							  </div>
 							  <div className="control">
-							    <a className="button is-info" onClick = {this.handleSubmit}>
+							    <button className="button is-info" onClick = {this.handleSubmit} disabled={!this.state.newBook}>
 							      Add
-							    </a>
+							    </button>
 							  </div>
 							</div>
 		            	</div>
