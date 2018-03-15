@@ -17,7 +17,12 @@ Simple Library System Solution to Add and List Books
   });
 ```
 ### prepare database
-```
-  1.create database name with [librarybook](https://dev.mysql.com/doc/refman/5.7/en/creating-database.html)
-  2.get sql from  server/db.sql and import it
-```
+
+- create database name with [librarybook](https://dev.mysql.com/doc/refman/5.7/en/creating-database.html)
+- get sql from  server/db.sql and import it
+
+
+### Install dependency and start server
+### `npm install nodemon -g`  Install [nodemon](https://www.npmjs.com/package/nodemon) globaly 
+### `npm install` Install dependency
+### `npm start ` strat the server
