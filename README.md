@@ -27,7 +27,7 @@ Simple Library System Solution to Add and List Books
 > `npm start ` start the server
 
 
-### Install dependency and start client (react project)
+### Install dependency and start client (react project/Frontend)
 > `npm install` Install dependency.<br>
 > `npm start `
 
