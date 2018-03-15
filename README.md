@@ -22,7 +22,16 @@ Simple Library System Solution to Add and List Books
 - get sql from  server/db.sql and import it
 
 
-### Install dependency and start server
+### Install dependency and start server(node project/backend)
 > `npm install nodemon -g`  Install [nodemon](https://www.npmjs.com/package/nodemon) globaly.<br>
 > `npm install` Install dependency.<br>
-> `npm start ` strat the server
+> `npm start ` start the server
+
+
+### Install dependency and start client (react project)
+> `npm install` Install dependency.<br>
+> `npm start `
+
+## Something Missing?
+
+If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/sivatharan/React-and-Nodejs-Simple-Library-System/issues) or [contribute some!](https://github.com/sivatharan/React-and-Nodejs-Simple-Library-System/blob/master/README.md)
