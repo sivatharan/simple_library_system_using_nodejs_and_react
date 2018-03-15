@@ -7,7 +7,7 @@ Simple Library System Solution to Add and List Books
 - Admin should be able to delete books
 
 ### Technologies​
-- Frontend : ReactJS and Redux with a any CSS framework
+- Frontend : ReactJS and Redux with CSS framework
 - Backend Service: Node JS - Express
 - Database: Mysql, but used [Stored Procedures](https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-stored-procedures.html) also.
 ```
