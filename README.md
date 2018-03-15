@@ -10,9 +10,9 @@ Simple Library System Solution to Add and List Books
 - Frontend : ReactJS and Redux with a any CSS framework
 - Backend Service: Node JS - Express
 - Database: Mysql, but used [Stored Procedures](https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-stored-procedures.html) also.
----
+```
   connection.query('call addBook("'+makeid()+'","'+ req.body.title+'")', function (error, results, fields) {
         connection.release();
         //response code here
     });
----
+```
