@@ -35,3 +35,6 @@ body {
 .card-content {
   padding: 3.5rem 0;
 }
+.deleteBook{
+	text-align: center;
+}

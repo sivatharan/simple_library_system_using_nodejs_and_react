@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import BookDetail from './BookDetail';
-import { connect } from 'react-redux';
 
 const baseUrl = 'http://localhost:9000/api/book';
 
@@ -27,6 +26,8 @@ export default class BookList extends React.Component {
 	  axios.get(baseUrl+'/list')
 	      .then(res => {
 	        this.setState({ booklist: res.data.result });
+	  }).catch(a => {
+	  	console.log(a);
 	  });
 	}
 
@@ -37,23 +38,16 @@ export default class BookList extends React.Component {
 	}
 
 	handleSubmit(e) {
-		console.info(this.state.booklist);
-		// this.state.booklist.push({id:29,code:'sdsd',title:'book 3'});
-		// this.state.newBook = '';
-		// console.info(this.state.booklist);
-		// handleChange(e);
-	    axios.post(baseUrl+'/add', {
+		axios.post(baseUrl+'/add', {
 		    title: this.state.newBook,
 		  })
-		  .then(function (res) {
-		  	// console.info(this.state.booklist);
-		  	this.setState({ 
-			  booklist: this.state.booklist.concat([res.data.result])
-			});
-			// this.state.booklist.push(res.data.result);
-		  })
-		  .catch(function (error) {
-		    console.log(error);
+	      .then(res => {
+	        this.setState({booklist: this.state.booklist.concat([res.data.result])});
+	        this.setState({ 
+			newBook: ''
+		});
+		}).catch(a => {
+			console.log(a);
 		});
 	}
 
