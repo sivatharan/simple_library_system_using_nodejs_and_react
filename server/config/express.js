@@ -28,7 +28,7 @@ module.exports = function(app) {
   // process.on('UnauthorizedError', (err) => {
    
   // });
-
+  
   app.use(function (req, res, next) {
 
     res.setHeader('Access-Control-Allow-Credentials', true);

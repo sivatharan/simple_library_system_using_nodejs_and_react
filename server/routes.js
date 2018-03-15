@@ -4,7 +4,9 @@
  */
 'use strict';
 module.exports = function(app) {
-	
+
+	app.all('/api/book/*',[require('./config/validateRequest')]); // all auth validation
+
 	app.use('/api/book', require('./api/book'));
 	
 	app.get('*', function(req, res){
