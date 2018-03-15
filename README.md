@@ -2,15 +2,15 @@
 Simple Library System Solution to Add and List Books
 ```
 ## Proposed Solution :
--Admin should be able to add books
--Admin should be able to view the added book as a list
--Admin should be able to delete books
+- Admin should be able to add books
+- Admin should be able to view the added book as a list
+- Admin should be able to delete books
 ```
 ```
 ## Technologies​
--Frontend : ReactJS and Redux with a any CSS framework
--Backend Service: Node JS - Express
--Database: Mysql used [https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-stored-procedures.html](#Stored Procedures)
+- Frontend : ReactJS and Redux with a any CSS framework
+- Backend Service: Node JS - Express
+- Database: Mysql used [Stored Procedures](https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-stored-procedures.html)
 ```
 
 ## Updating to New Releases
