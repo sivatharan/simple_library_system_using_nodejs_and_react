@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import BookDetail from './BookDetail';
-
 import { connect } from 'react-redux';
 
 const baseUrl = 'http://localhost:9000/api/book';
@@ -19,6 +18,8 @@ export default class BookList extends React.Component {
 			booklist: [],
 			newBook: ''
 		};
+		this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	componentDidMount() {
@@ -35,15 +36,21 @@ export default class BookList extends React.Component {
 		});
 	}
 
-	handleSubmitClick(e) {
-
+	handleSubmit(e) {
+		console.info(this.state.booklist);
+		// this.state.booklist.push({id:29,code:'sdsd',title:'book 3'});
+		// this.state.newBook = '';
+		// console.info(this.state.booklist);
+		// handleChange(e);
 	    axios.post(baseUrl+'/add', {
 		    title: this.state.newBook,
 		  })
 		  .then(function (res) {
+		  	// console.info(this.state.booklist);
 		  	this.setState({ 
 			  booklist: this.state.booklist.concat([res.data.result])
 			});
+			// this.state.booklist.push(res.data.result);
 		  })
 		  .catch(function (error) {
 		    console.log(error);
@@ -53,32 +60,37 @@ export default class BookList extends React.Component {
     render() {
 
         return (
-            <div className="container">
+            <div className="container card">
+
+            	<header className="card-header">
+			      Library System
+			    </header>
             	<div className="column is-desktop is-vcentered">
 	            	<div className="columns">
 		            	<div className="column">
 		            		<div className="field has-addons">
 							  <div className="control">
-							    <input className="input" type="text" placeholder="Add Book" onChange={this.handleChange.bind(this)} value={this.state.newBook}/>
+							    <input className="input" type="text" placeholder="Add Book" onChange={this.handleChange} value={this.state.newBook}/>
 							  </div>
 							  <div className="control">
-							    <a className="button is-info" onClick = {this.handleSubmitClick.bind(this)}>
+							    <a className="button is-info" onClick = {this.handleSubmit}>
 							      Add
 							    </a>
 							  </div>
 							</div>
 		            	</div>
 	            	</div>
-
-	            	<div className="columns is-desktop is-vcentered">
+	            	{ this.state.booklist.length > 0 ?
+	            	<div className="columns  is-centered">
+	            	
 		            	<div className="column">
-		            		<table className="table is-bordered">
+		            		<table className="table is-bordered is-centered">
 		            		<thead>
 		            			 <tr>
-					                <td>No</td>
-					                <td>Code</td>
-					                <td>Name</td>
-					                <td>Action</td>
+					                <th>No</th>
+					                <th>Code</th>
+					                <th>Name</th>
+					                <th>Action</th>
 					            </tr>
 		            		</thead>
 		            		<tbody>
@@ -91,6 +103,9 @@ export default class BookList extends React.Component {
 		            	</table>
 		            	</div>
 	            	</div>
+	            	 :
+            		<h2> No record found</h2>
+	            }
             	</div>
             </div>
         );

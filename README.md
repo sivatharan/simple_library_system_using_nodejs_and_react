@@ -33,4 +33,4 @@ Simple Library System Solution to Add and List Books
 
 ## Something Missing?
 
-If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/sivatharan/React-and-Nodejs-Simple-Library-System/issues) or [contribute some!](https://github.com/sivatharan/React-and-Nodejs-Simple-Library-System/blob/master/README.md)
+If you have ideas for more “How To” recipes that should be on this page, [let me know](https://github.com/sivatharan/React-and-Nodejs-Simple-Library-System/issues) or [contribute some!](https://github.com/sivatharan/React-and-Nodejs-Simple-Library-System/blob/master/README.md)
