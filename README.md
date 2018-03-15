@@ -23,6 +23,6 @@ Simple Library System Solution to Add and List Books
 
 
 ### Install dependency and start server
-### `npm install nodemon -g`  Install [nodemon](https://www.npmjs.com/package/nodemon) globaly 
-### `npm install` Install dependency
-### `npm start ` strat the server
+** `npm install nodemon -g`  Install [nodemon](https://www.npmjs.com/package/nodemon) globaly **
+** `npm install` Install dependency **
+** `npm start ` strat the server **
