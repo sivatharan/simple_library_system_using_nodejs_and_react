@@ -20,7 +20,13 @@ exports.getBookList = function (req, res, next) {
 }
 
 exports.addBook = function (req, res, next) {
-	
+
+	req.checkBody('title', 'Invalid title').notEmpty().withMessage("title can not be empty");
+
+	var errors = req.validationErrors();
+
+	if (errors) return res.status(400).json({status: false, message: "faild", result: errors});
+
 	mysqlDB.getConnection(function(err, connection) {
 		connection.query('call addBook("'+makeid()+'","'+ req.body.title+'")', function (error, results, fields) {
 		  	connection.release();

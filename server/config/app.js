@@ -58,7 +58,7 @@ exports.isArray = function(a) {
 };
 
 exports.contentType = function(req){
-	// console.info(req.get('Content-Type'));
+	console.info(req.get('Content-Type'));
 	if(req.get('Content-Type') == 'application/json') return 'json';
 	else if(req.get('Content-Type') ==  'application/x-www-form-urlencoded')  return 'urlencoded';
 	else return 'others'

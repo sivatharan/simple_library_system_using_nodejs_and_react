@@ -2,19 +2,20 @@
  * @author A.Sivatharan
  * created on 15.03.2018
  */
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import axios from 'axios';
 import BookDetail from './BookDetail';
 
+import { connect } from 'react-redux';
+import { addBook } from './actions/index';
 const baseUrl = 'http://localhost:9000/api/book';
 
-export default class BookList extends React.Component {
+class BookList extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			booklist: [],
+			booklist: this.props.books,
 			newBook: ''
 		};
 		this.handleChange = this.handleChange.bind(this);
@@ -22,13 +23,7 @@ export default class BookList extends React.Component {
 	}
 
 	componentDidMount() {
-
-	  axios.get(baseUrl+'/list')
-	      .then(res => {
-	        this.setState({ booklist: res.data.result });
-	  }).catch(a => {
-	  	console.log(a);
-	  });
+		
 	}
 
 	handleChange(e) {
@@ -42,7 +37,7 @@ export default class BookList extends React.Component {
 		    title: this.state.newBook,
 		  })
 	      .then(res => {
-	        this.setState({booklist: this.state.booklist.concat([res.data.result])});
+	      	this.props.addBookToList(res.data.result); // TODO: important method
 	        this.setState({ 
 			newBook: ''
 		});
@@ -74,7 +69,7 @@ export default class BookList extends React.Component {
 							</div>
 		            	</div>
 	            	</div>
-	            	{ this.state.booklist.length > 0 ?
+	            	{ this.props.books.length > 0 ?
 	            	<div className="columns  is-centered">
 	            	
 		            	<div className="column">
@@ -89,7 +84,7 @@ export default class BookList extends React.Component {
 		            		</thead>
 		            		<tbody>
 		            			{	
-		            				this.state.booklist.map(function(value, index){
+		            				this.props.books.map(function(value, index){
 		            					return <BookDetail key={index} book={value}  />
 		            				})
 		            			}
@@ -105,3 +100,22 @@ export default class BookList extends React.Component {
         );
     }
 };
+
+
+BookList.propTypes = {
+
+};
+
+function mapStateToProps(state, ownProps) {
+	return {
+		books: state
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		addBookToList: book => dispatch(addBook(book))
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);

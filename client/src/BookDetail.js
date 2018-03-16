@@ -3,19 +3,20 @@
  * created on 15.03.2018
  */
 
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import  {  
-  applyMiddleware,
-  combineReducers,
-  createStore,
-} from 'redux';
+import React from 'react';
+import { connect } from 'react-redux';
+import { deleteBook } from './actions/index';
 
+class BookDetail extends React.Component {
 
-export default  class BookDetail extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
   
 	handleDelete(book) {
-        console.info(book);
+        console.info(book.Target);
+        // this.props.deleteBook(this.props.book);
 	}
 
     render() {
@@ -30,3 +31,23 @@ export default  class BookDetail extends React.Component {
     }
 
 };
+
+
+BookDetail.propTypes = {
+
+};
+
+function mapStateToProps(state, ownProps) {
+    console.info(ownProps);
+    return {
+        book: ownProps.book
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        deleteBookFromList: book => dispatch(deleteBook(book))
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookDetail);
