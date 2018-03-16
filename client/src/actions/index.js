@@ -11,8 +11,8 @@ export function loadBookSuccess(books) {
   return {type: LOAD_BOOKS, payload: books};
 }
 
-export function deleteBookSuccess(books) {
-  return {type: DELETE_BOOK, payload: books};
+export function deleteBookSuccess(index, books) {
+  return {type: DELETE_BOOK, payload: books, i: index};
 }
 
 // export const addBook = book => ({ type: "ADD_BOOK", 
@@ -38,12 +38,13 @@ export function loadBooks() {
 	}
 }
 
-export function deleteBook(book) {
+export function deleteBook(index, book) {
 	return function(dispatch) {
 		return bookApi.deleteBook(book).then(books => {
-			dispatch(deleteBookSuccess(books));
+			dispatch(deleteBookSuccess(index, book));
 		}).catch(error => {
 			throw(error);
 		});
+
 	}
 }

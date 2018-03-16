@@ -17,7 +17,7 @@ export default class BookApi {
 	}
 
 	static deleteBook(book) {
-		return axios.post(baseUrl+'/delete').then(res => {
+		return axios.post(baseUrl+'/delete',{id:book.id}).then(res => {
 			return res.data.result;
 		}).catch(a => {
 			console.log(a);

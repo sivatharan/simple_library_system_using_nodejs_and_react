@@ -85,7 +85,7 @@ class BookList extends React.Component {
 		            		<tbody>
 		            			{	
 		            				this.props.books.map(function(value, index){
-		            					return <BookDetail key={index} book={value}  />
+		            					return <BookDetail key={index} index_key={index} book={value}  />
 		            				})
 		            			}
 		            		</tbody>

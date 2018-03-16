@@ -12,12 +12,15 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
 	switch(action.type) {
 		case ADD_BOOK:
-		console.log(state);
 			return state.concat(
 				action.payload
 				);
 		case DELETE_BOOK:
-			return state.books = action.payload;
+			
+			return state.filter(function(el) {						
+					    return el.id !== action.payload.id;
+					});
+
 		case LOAD_BOOKS:
 			return state.books = action.payload;
 		default:

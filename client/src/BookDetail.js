@@ -15,17 +15,16 @@ class BookDetail extends React.Component {
     }
   
 	handleDelete(book) {
-        console.info(book.Target);
-        // this.props.deleteBook(this.props.book);
+        this.props.deleteBookFromList(this.props.index, this.props.book);
 	}
 
     render() {
         return (
             <tr>
-                <td>{this.props.book.id}</td>
+                <td>{this.props.index_key+1}</td>
                 <td>{this.props.book.code}</td>
                 <td>{this.props.book.title}</td>
-                <td className="deleteBook"><span onClick={this.handleDelete.bind(this.props.book)} className="delete">&times;</span></td>
+                <td className="deleteBook"><span onClick={this.handleDelete.bind(this)} className="delete">&times;</span></td>
             </tr>
         );
     }
@@ -38,15 +37,15 @@ BookDetail.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-    console.info(ownProps);
     return {
-        book: ownProps.book
+        book: ownProps.book,
+        index: ownProps.index_key
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        deleteBookFromList: book => dispatch(deleteBook(book))
+        deleteBookFromList: (index, book) => dispatch(deleteBook(index, book))
     };
 }
 
