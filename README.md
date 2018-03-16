@@ -23,13 +23,13 @@ Simple Library System Solution to Add and List Books
 
 ### Install dependency and start server(node project/backend)
 > `npm install nodemon -g`  Install [nodemon](https://www.npmjs.com/package/nodemon) globaly.<br>
-> go to the server directory `cd server`
+> go to the server directory `cd server`<br>
 > `npm install` Install dependency.<br>
 > `npm start ` start the server
 
 
 ### Install dependency and start client (react project/Frontend)
->  go to the client directory `cd client`
+>  go to the client directory `cd client`<br>
 > `npm install` Install dependency.<br>
 > `npm start `
 
