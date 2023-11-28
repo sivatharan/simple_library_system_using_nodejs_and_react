@@ -16,6 +16,6 @@
     "mysql": "^2.13.0",
     "nodemailer": "^4.4.0",
     "password-hash": "^1.2.2",
-    "request": "2.79.0"
+    "request": "2.80.0"
   }
 }
